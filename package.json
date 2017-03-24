@@ -1,0 +1,34 @@
+{
+  "name": "getosdetails",
+  "version": "1.0.0",
+  "description": "An application to get Operating System details on the server",
+  "main": "try.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ejs",
+    "node",
+    "server",
+    "details",
+    "process",
+    "object",
+    "OS",
+    "object"
+  ],
+  "author": "Nigel Carty",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nacarty/get-os-details.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nacarty/get-os-details/issues"
+  },
+  "homepage": "https://github.com/nacarty/get-os-details#readme"
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="dcterms.created" content="Tue, 21 Mar 2017 17:32:52 GMT">
+    <meta name="description" content="Properties of a remote server">
+    <meta name="keywords" content="IP Address, Operating System, Server Language">
+    <title>Remote Server Details</title>
+    
+    <style type="text/css">
+    
+    body {
+      color:#000000;
+      background-color:#008877;
+    }
+	
+table, td, th{
+    border: 1px solid black;
+    padding:6px;
+}
+
+table{
+    margin:auto;
+ }
+ 
+ p{
+     text-align: center;
+ }
+  
+ 
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     <p ><br><b>PROPERTIES OF THE SERVER RUNNING THIS WEB PAGE</b></p>
+     <br>
+     <table>
+	    <thead><tr><th>PROPERTY</th><th>VALUE</th></tr></thead>
+		<tr class = 'blank'><td colspan="2"></td></tr>
+		<tr><td colspan='2' align='center'>GENERIC SYSTEM VARIABLES</td></tr>
+		<tr><td>User Name</td><td id = 'user'><%=user%></td></tr>
+		<tr><td>Computer Name</td><td id='computer'><%=computerName%></%%></td></tr>
+	        <tr><td>IP Address</td><td id = 'ip'><%=ip%></td></tr>
+		<tr><td>Language</td><td id = 'language'><%=language%></td></tr>
+		<tr class = 'blank'><td colspan="2"></td></tr>
+		<tr><td colspan='2' align='center'>OPERATING SYSTEM VARIABLES</td></tr>
+		<tr><td>Type</td><td id='ostype'><%=os.type%></td></tr>
+		<tr><td>Architecture</td><td id = 'arch'><%=os.architecture%></td></tr>
+		<tr><td>Platform</td><td id = 'platform'><%=os.platform%></td></tr>
+		<tr class = 'blank'><td colspan="2"></td></tr>
+		<tr><td colspan="2" align='center'>PROCESSOR-RELATED VARIABLES</td></tr>
+		<tr><td>Quantity</td><td id = 'quantity'><%=processor.quantity%></td></tr>
+		<tr><td>Architecture</td><td id = 'p_arch'><%=processor.architecture%></td></tr>
+		<tr><td>Identifier</td><td id = 'identifier'><%=processor.identifier%></td></tr>
+		<tr><td>Level</td><td id = 'level'><%=processor.level%></td></tr>
+		<tr><td>Revision</td><td id = 'rev'><%=processor.revision%></td></tr>
+     </table>
+	 
+      <div>
+          <p id = 'author'></p>
+          <p id = 'theDate'></p>
+      </div>
+	 <script>
+	    var obj = {me:"Nigel Carty", where:"Saddlers, St. Kitts"};
+                document.getElementById('author').innerHTML = "Author: "+obj.me+'  '+obj.where;
+                document.getElementById('theDate').innerHTML = FriendlyDate();
+                
+            function FriendlyDate() 
+                {
+                  var Month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];  //0 - 11
+                  var DateOrd = ['st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'st']; //1 - 31
+
+                  var  curDate = new Date;                  
+
+                  var dateString = Month[curDate.getUTCMonth()]+ ' ' + curDate.getUTCDate() + DateOrd[curDate.getUTCDate() -1]+', '+curDate.getFullYear();
+                  
+                  return dateString;
+                }
+                
+	 </script>
+  </body>
+</html>
