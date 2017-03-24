@@ -6,13 +6,15 @@ var httpServer = require('http').createServer(exServer); //import http and immed
  Even if you wrap the express server in the http server, you may still directly reference the express server.
  */
 
+var ip = require('ip');  //import ip 
+
 httpServer.listen(process.env.PORT||5500); //or exServer.listen(process.env.PORT||5500);
 
 
 exServer.set('view engine', 'ejs' ); //ejs was installed with npm --global --save ejs
 
 var myObj = {};
-var ip = require('ip');  //import ip 
+
 myObj.ip = ip.address();
 
 var OS = require('os');  //import os
@@ -31,7 +33,7 @@ myObj.processor = {quantity: process.env.NUMBER_OF_PROCESSORS,
 var LOCAL = require('os-locale');  //import os-locale. Will this give problems on the server??
 myObj.language = LOCAL.sync();
 
-exServer.get('/', function(req, res){
+exServer.get('/',function(req, res){
 	res.render('tabular_results', myObj); //the fields of myObj are exposed to tabular_results.ejs
 });
 
