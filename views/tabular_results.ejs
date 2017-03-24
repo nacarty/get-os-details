@@ -40,9 +40,9 @@ table{
 	    <thead><tr><th>PROPERTY</th><th>VALUE</th></tr></thead>
 		<tr class = 'blank'><td colspan="2"></td></tr>
 		<tr><td colspan='2' align='center'>GENERIC SYSTEM VARIABLES</td></tr>
-		<tr><td>User Name</td><td id = 'user'><%=user%></td></tr>
-		<tr><td>Computer Name</td><td id='computer'><%=computerName%></%%></td></tr>
-	        <tr><td>IP Address</td><td id = 'ip'><%=ip%></td></tr>
+		<tr><td>User Name</td><td id = 'user'><%=(user||'Unknown')%></td></tr>
+		<tr><td>Computer Name</td><td id='computer'><%=(computerName||'Unknown')%></%%></td></tr>
+	        <tr><td>IP Address</td><td id = 'ip'><%=(ip||'Unknown')%></td></tr>
 		<tr><td>Language</td><td id = 'language'><%=language%></td></tr>
 		<tr class = 'blank'><td colspan="2"></td></tr>
 		<tr><td colspan='2' align='center'>OPERATING SYSTEM VARIABLES</td></tr>
@@ -52,10 +52,10 @@ table{
 		<tr class = 'blank'><td colspan="2"></td></tr>
 		<tr><td colspan="2" align='center'>PROCESSOR-RELATED VARIABLES</td></tr>
 		<tr><td>Quantity</td><td id = 'quantity'><%=(processor.quantity||'Unknown')%></td></tr>
-		<tr><td>Architecture</td><td id = 'p_arch'><%=processor.architecture%></td></tr>
-		<tr><td>Identifier</td><td id = 'identifier'><%=processor.identifier%></td></tr>
-		<tr><td>Level</td><td id = 'level'><%=processor.level%></td></tr>
-		<tr><td>Revision</td><td id = 'rev'><%=processor.revision%></td></tr>
+		<tr><td>Architecture</td><td id = 'p_arch'><%=(processor.architecture||'Unknown')%></td></tr>
+		<tr><td>Identifier</td><td id = 'identifier'><%=(processor.identifier||'Unknown')%></td></tr>
+		<tr><td>Level</td><td id = 'level'><%=(processor.level||'Unknown')%></td></tr>
+		<tr><td>Revision</td><td id = 'rev'><%=(processor.revision||'Unknown')%></td></tr>
      </table>
 	 
       <div>
