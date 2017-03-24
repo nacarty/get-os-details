@@ -1,1 +1,1 @@
-web: node try.js
+web: node index.js
