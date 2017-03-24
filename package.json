@@ -1,5 +1,5 @@
 {
-  "name": "getosdetails",
+  "name": "heroku-os-details",
   "version": "1.0.0",
   "description": "An application to get Operating System details on the server",
   "keywords": [
@@ -17,7 +17,9 @@
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "ip": "^1.1.5"
+    "ip": "^1.1.5",
+    "os": "^0.1.1",
+    "os-locale": "^2.0.0"
   },
-  "repository": "https://git.heroku.com/getosdetails.git"
+  "repository": "https://git.heroku.com/heroku-os-details.git"
 }
