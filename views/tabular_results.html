@@ -51,7 +51,7 @@ table{
 		<tr><td>Platform</td><td id = 'platform'><%=os.platform%></td></tr>
 		<tr class = 'blank'><td colspan="2"></td></tr>
 		<tr><td colspan="2" align='center'>PROCESSOR-RELATED VARIABLES</td></tr>
-		<tr><td>Quantity</td><td id = 'quantity'><%=processor.quantity%></td></tr>
+		<tr><td>Quantity</td><td id = 'quantity'><%=processor.quantity||'Unknown'%></td></tr>
 		<tr><td>Architecture</td><td id = 'p_arch'><%=processor.architecture%></td></tr>
 		<tr><td>Identifier</td><td id = 'identifier'><%=processor.identifier%></td></tr>
 		<tr><td>Level</td><td id = 'level'><%=processor.level%></td></tr>
@@ -64,7 +64,7 @@ table{
       </div>
 	 <script>
 	    var obj = {me:"Nigel Carty", where:"Saddlers, St. Kitts"};
-                document.getElementById('author').innerHTML = "Author: "+obj.me+'  '+obj.where;
+                document.getElementById('author').innerHTML = "Author: "+obj.me+' [  '+obj.where+' ]';
                 document.getElementById('theDate').innerHTML = FriendlyDate();
                 
             function FriendlyDate() 
