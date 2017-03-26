@@ -54,9 +54,8 @@ table{
 	    <thead><tr><th>PROPERTY</th><th >VALUE</th></tr></thead>
 		<tr class = 'blank'><td colspan="2"></td></tr>
 		<tr><td colspan='2' align='center'>CLIENT SYSTEM VARIABLES</td></tr>
-	        <tr><td>IP Address</td><td id = 'ip'><%=(client.ip||'Unknown')%></td></tr>
-		        
-                        
+	        <tr><td>IP Address</td><td id = 'ip'><%=(client.ip||'Unknown')%></td></tr> 
+                <tr><td>Operating System</td><td id = 'clientostype'><%=client.operatingSystem%></td></tr>
                  <tr><td>Language</td><td id = 'language'><%=client.languages%></td></tr>
 		<tr><td>Software</td><td width="145px" id = 'platform'><%=client.software%></td></tr>
      </table>

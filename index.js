@@ -45,17 +45,21 @@ exServer.get('/',function(req, res){
         
         myObj.client.languages = function(){
             var langStr = req.headers['accept-language'];
+            
             var regex1 = /;q=\d+\.\d+,*\s*/;  //spit on ";q=0.8,  " etc
             var langArr = langStr.split(regex1);
                 langArr.pop();  //remove the last element of the array because it's blank
 
+           if (langArr.length == 0)
+                return langStr;
+
             var regex2 = /[A-Za-z\s,\*-]*;q=/;  //like ';q='
             var probArr = langStr.split(regex2); 
-                delete probArr[0]; //remove the first element of the array because it's blank
+                probArr.shift(); //remove the first element of the array because it's blank
             
             var combinedArr = [];
             langArr.forEach(function(cur, indx){
-                combinedArr.push([cur, probArr[indx+1]]);     
+                combinedArr.push([cur, probArr[indx]]);     
             });
             
             combinedArr.sort(function(a,b){
@@ -65,11 +69,15 @@ exServer.get('/',function(req, res){
                     return 1;
             });
             
+            console.log(probArr);
+            console.log(langArr);
+            console.log(combinedArr);
+            
             return combinedArr[0][0].split(/[;,]/)[0];
         }();
                 
         myObj.client.software = req.headers['user-agent'];      
-        //console.log(myObj);
+        myObj.client.operatingSystem = myObj.client.software.split(/[\(\)]/)[1];
 	res.render('tabular_results', myObj); //the fields of myObj are exposed to tabular_results.ejs
 });
 
