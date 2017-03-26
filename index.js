@@ -45,8 +45,6 @@ exServer.get('/',function(req, res){
         
         myObj.client.languages = function(){
             var langStr = req.headers['accept-language'];
-                 console.log(req.headers);
-                langStr = 'en-US, en-GB, en;q=0.991, fr-CH, fr-NOR;q=0.9, es-Mx;q=0.6, it;q=0.95, *;q=0.20';   
             var regex1 = /;q=\d+\.\d+,*\s*/;  //spit on ";q=0.8,  " etc
             var langArr = langStr.split(regex1);
                 langArr.pop();  //remove the last element of the array because it's blank
@@ -60,14 +58,12 @@ exServer.get('/',function(req, res){
                 combinedArr.push([cur, probArr[indx+1]]);     
             });
             
-            console.log('Combined Array: '+combinedArr);
             combinedArr.sort(function(a,b){
                 if (a[1]>b[1])
                     return -1;
                 else
                     return 1;
             });
-            console.log('Combined Array: '+combinedArr);
             
             return combinedArr[0][0].split(/[;,]/)[0];
         }();
